@@ -103,8 +103,8 @@
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>web Snapshot Nexus Repository </name>
-	      <url>http://15.206.80.219:8081/repository/web-snapshot/</url>    
+	      <name>facebook Snapshot Nexus Repository </name>
+	      <url>http://15.206.80.219:8081/repository/facebook-Snapshot//</url>    
 	    </snapshotRepository>
 	    
 	</distributionManagement>
