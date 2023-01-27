@@ -1,6 +1,6 @@
 node{
 
-def mavenHome=tool name: "maven3.8.7"
+def mavenHome=tool name: "maven 3.8.7"
 
 stage('Checkoutcode'){
   git branch: 'development', credentialsId: 'b23b51f3-01a3-4e7c-9e2d-dedb8e6e87e1', url: 'https://github.com/babugowda/maven-web-application.git'
@@ -30,8 +30,10 @@ sh "$mavenHome/bin/mvn deploy"
 //Deploy App into Tomcat server
 
 stage('DeployAppintoTomcat'){
-sshagent(['108006b5-687e-4507-9f3f-32cfba8f422d']) {
+sshagent(['108006b5-687e-4507-9f3f-32cfba8f422d']){
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.232.66.99:/opt/apache-tomcat-9.0.71/webapps"
 }
 }
-}//Node closing
+
+}//Nodeclosing
+
