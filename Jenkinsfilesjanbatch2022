@@ -7,6 +7,8 @@ echo "The Build number is : ${env.BUILD_NUMBER}"
 
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
 properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+buildName 'Dev-$(BUILD_NUMBER)'
+
 stage('Checkoutcode'){
   git branch: 'development', credentialsId: 'b23b51f3-01a3-4e7c-9e2d-dedb8e6e87e1', url: 'https://github.com/babugowda/maven-web-application.git'
 }
